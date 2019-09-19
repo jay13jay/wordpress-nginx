@@ -4,13 +4,13 @@
            sha256sum="{{ wp_sha256sum }}"
 
 - name: Extract archive
-  command: chdir=/var/www/html/ /bin/tar xvf wordpress-{{ wp_version }}.tar.gz creates=/srv/wordpress
+  command: chdir=/var/www/html/ /bin/tar xvf wordpress-{{ wp_version }}.tar.gz creates=/var/www/html/wordpress
 
 - name: Add group "wordpress"
   group: name=wordpress
 
 - name: Add user "wordpress"
-  user: name=wordpress group=wordpress home=/srv/wordpress/
+  user: name=wordpress group=wordpress home=/var/www/html/wordpress/
 
 - name: Fetch random salts for WordPress config
   local_action: command curl https://api.wordpress.org/secret-key/1.1/salt/
