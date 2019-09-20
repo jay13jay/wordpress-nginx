@@ -14,6 +14,9 @@
  * @package WordPress
  */
 
+ // ** Set site_url and home to ELB URL
+define('WP_HOME','{{ wp_elb_url }}');
+define('WP_SITEURL','{{ wp_elb_url }}');
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', '{{ wp_db_name }}');
