@@ -26,7 +26,7 @@
 
 - name: Update siteurl and home in database
   shell: |
-    /bin/bash /root/update_site-url.sh {{ wp_db_user }} {{ wp_db_password }} {{ wp_db_url }} {{ wp_db_name }} {{ wp_elb_url }}
+    /bin/bash /root/update_site-url.sh {{ wp_db_user }} {{ wp_db_password }} {{ wp_db_host }} {{ wp_db_name }} {{ wp_elb_url }}
   
 
 - name: Copy placeholder index.html
