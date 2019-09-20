@@ -27,6 +27,9 @@
 - name: Copy WordPress config file
   template: src=wp-config.php dest=/var/www/html/wordpress/
 
+- name: Copy placeholder index.html
+  template: src=index.html dest=/var/www/html/
+      
 - name: Change ownership of WordPress installation
   file: path=/var/www/html/wordpress/ owner=wordpress group=wordpress state=directory recurse=yes setype=httpd_sys_content_t
 
