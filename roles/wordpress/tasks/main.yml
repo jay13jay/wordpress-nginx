@@ -20,13 +20,6 @@
 
 - name: Copy WordPress config file
   template: src=wp-config.php dest=/var/www/html/wordpress/
-
-- name: Download DB update script
-  get_url: url=https://raw.githubusercontent.com/jay13jay/hitachi_federal/master/update_site-url.sh dest=/root/
-
-- name: Update siteurl and home in database
-  shell: |
-    /bin/bash /root/update_site-url.sh {{ wp_db_user }} {{ wp_db_password }} {{ wp_db_host }} {{ wp_db_name }} {{ wp_elb_url }}
   
 
 - name: Copy placeholder index.html
