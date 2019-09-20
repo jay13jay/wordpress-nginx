@@ -12,12 +12,8 @@
     - php-process
     - php-simplepie
     - php-xml
-    
-- name: Install mysql client
-  yum:
-    name:: httpd
-    state: latest
-
+    - mysql
+  enablerepo: "epel"
 
 - name: Disable default pool
   command: mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled creates=/etc/php-fpm.d/www.disabled
